@@ -12,7 +12,7 @@ import { Task } from './task';
 
 @Injectable()
 export class TaskService {
-  private tasks: Task[];
+  tasks: Task[];
 
   constructor(private http: Http) { }
 

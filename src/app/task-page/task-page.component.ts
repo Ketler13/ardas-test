@@ -29,7 +29,7 @@ export class TaskPageComponent implements OnInit {
   }
 
   updateName(name: string): void {
-    if (name !== this.task.name) {
+    if (name && (name !== this.task.name)) {
       this.taskService.updateTaskName(name, this.task.id)
         .filter(res => res)
         .subscribe(res => {
@@ -39,7 +39,7 @@ export class TaskPageComponent implements OnInit {
     }
   }
 
-  loadTask() {
+  loadTask(): void {
     this.route.params
       .switchMap(params => this.taskService.getTask(+params.id))
       .subscribe(

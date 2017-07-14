@@ -8,7 +8,10 @@ import { Task } from './task';
 export class OnlyActivePipe implements PipeTransform {
 
   transform(value: Task[]): Task[] {
-    return value.filter(task => task.obj_status === 'active');
+    if (Array.isArray(value)) {
+      return value.filter(task => task.obj_status === 'active');
+    }
+    throw new Error('Just array can be tranformed');
   }
 
 }
