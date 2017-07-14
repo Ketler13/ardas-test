@@ -13,16 +13,22 @@ import { Task } from '../shared/task';
 export class TaskListComponent implements OnInit {
   taskList: Task[];
   loading = false;
+  error: string = null;
 
   constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
     this.loading = true;
+    this.error = null;
     this.taskService.getTasks()
-      .subscribe(tasks => {
-        this.taskList = tasks;
-        this.loading = false;
-      });
+      .subscribe(
+        tasks => {
+          this.taskList = tasks;
+          this.loading = false;
+          this.error = null;
+        },
+        error => this.error = error
+      );
   }
 
 }

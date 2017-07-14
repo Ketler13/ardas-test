@@ -1,8 +1,9 @@
-<div>
-  <p [style.fontWeight]="task.is_high_priority ? 'bolder' : 'auto'">{{task.name}}</p>
-  <p>high: {{task.is_high_priority}}</p>
+<section>
+  <h3 [style.color]="task.is_high_priority ? 'red' : 'auto'">
+    <a [routerLink]="[task.id]">{{task.name}}</a>
+  </h3>
   <p>Actual effort: {{task.actual_effort}}</p>
   <p>Estimated effort: {{task.estimated_effort}}</p>
-  <p>Due to: {{task.due_date}}</p>
+  <p>Due to: {{task.due_date | date:fulldate}}</p>
   <p *ngIf="task.tags">Tags: <span *ngFor="let tag of task.tags">{{tag}}</span></p>
-</div>
+</section>

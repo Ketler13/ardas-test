@@ -1,4 +1,5 @@
 <p *ngIf="loading">loading tasks...</p>
+<p *ngIf="error">{{error}}</p>
 <ul *ngIf="taskList">
   <li *ngFor="let task of taskList | onlyActive">
     <app-task-item [task]="task"></app-task-item>
