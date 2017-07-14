@@ -32,7 +32,8 @@ export class TaskService {
       const task = this.tasks.filter(task => task.id === id)[0];
       return Observable.of(task);
     } else {
-      return Observable.throw('no such task');
+      return this.getTasks()
+        .map(tasks => tasks.filter(task => task.id === id)[0]);
     }
   }
 

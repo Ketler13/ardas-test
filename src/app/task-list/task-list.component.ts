@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import 'rxjs/add/operator/filter';
 
@@ -15,7 +16,7 @@ export class TaskListComponent implements OnInit {
   loading = false;
   error: string = null;
 
-  constructor(private taskService: TaskService) { }
+  constructor(private taskService: TaskService, private router: Router) { }
 
   ngOnInit(): void {
     this.loading = true;
@@ -29,6 +30,10 @@ export class TaskListComponent implements OnInit {
         },
         error => this.error = error
       );
+  }
+
+  openTask(id: number) {
+    this.router.navigate(['tasks', id]);
   }
 
 }

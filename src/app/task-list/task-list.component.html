@@ -1,7 +1,10 @@
-<p *ngIf="loading">loading tasks...</p>
-<p *ngIf="error">{{error}}</p>
-<ul *ngIf="taskList">
-  <li *ngFor="let task of taskList | onlyActive">
-    <app-task-item [task]="task"></app-task-item>
-  </li>
-</ul>
+<div class="task-list__wrapper">
+  <h1>Task list</h1>
+  <p *ngIf="loading">loading tasks...</p>
+  <p *ngIf="error">{{error}}</p>
+  <ul *ngIf="taskList" class="task-list">
+    <li *ngFor="let task of taskList | onlyActive" class="task-item" (click)="openTask(task.id)">
+      <app-task-item [task]="task"></app-task-item>
+    </li>
+  </ul>
+</div>

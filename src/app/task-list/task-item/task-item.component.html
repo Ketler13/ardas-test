@@ -1,6 +1,6 @@
 <section>
-  <h3 [style.color]="task.is_high_priority ? 'red' : 'auto'">
-    <a [routerLink]="[task.id]">{{task.name}}</a>
+  <h3 [style.fontWeight]="task.is_high_priority ? 'bolder' : 'auto'">
+    {{task.name}}
   </h3>
   <p>Actual effort: {{task.actual_effort}}</p>
   <p>Estimated effort: {{task.estimated_effort}}</p>

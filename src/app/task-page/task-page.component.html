@@ -1,12 +1,12 @@
-<section *ngIf="task">
-  <h2 (click)="toggleEditor()">{{taskName}}</h2>
+<div *ngIf="task">
+  <h1 (click)="toggleEditor()">{{taskName}}</h1>
   <div *ngIf="editorIsOpen">
-    <input type="text" #name name="" [value]="task.name">
-    <button type="button" (click)="updateName(name.value)">save</button>
+    <input type="text" class="task-name" #name name="" [value]="taskName">
+    <button type="button" class="save-button" (click)="updateName(name.value)">SAVE</button>
   </div>
-  <p>{{task.decription}}</p>
+  <p>{{task.description}}</p>
   <p>From: {{task.start_date | date:fulldate}}, to: {{task.due_date | date:fulldate}}</p>
   <p>Effort: actual - {{task.actual_effort}}, estimated - {{task.estimated_effort}}</p>
-  <a routerLink="/">go back</a>
-</section>
+  <a routerLink="/" class="back-link">go back</a>
+</div>
 <p *ngIf="error">{{error}}</p>
