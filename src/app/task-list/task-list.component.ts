@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TaskService } from '../task.service';
+import 'rxjs/add/operator/filter';
+
+import { TaskService } from '../shared/task.service';
+import { Task } from '../shared/task';
 
 @Component({
   selector: 'app-task-list',
@@ -8,11 +11,18 @@ import { TaskService } from '../task.service';
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent implements OnInit {
+  taskList: Task[];
+  loading = false;
 
   constructor(private taskService: TaskService) { }
 
-  ngOnInit() {
-    this.taskService.getTasks();
+  ngOnInit(): void {
+    this.loading = true;
+    this.taskService.getTasks()
+      .subscribe(tasks => {
+        this.taskList = tasks;
+        this.loading = false;
+      });
   }
 
 }

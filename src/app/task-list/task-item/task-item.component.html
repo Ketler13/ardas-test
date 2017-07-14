@@ -1,0 +1,8 @@
+<div>
+  <p [style.fontWeight]="task.is_high_priority ? 'bolder' : 'auto'">{{task.name}}</p>
+  <p>high: {{task.is_high_priority}}</p>
+  <p>Actual effort: {{task.actual_effort}}</p>
+  <p>Estimated effort: {{task.estimated_effort}}</p>
+  <p>Due to: {{task.due_date}}</p>
+  <p *ngIf="task.tags">Tags: <span *ngFor="let tag of task.tags">{{tag}}</span></p>
+</div>

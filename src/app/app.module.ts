@@ -4,15 +4,17 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { TaskListComponent } from './task-list/task-list.component';
-import { TaskPageComponent } from './task-list/task-page/task-page.component';
+import { TaskItemComponent } from './task-list/task-item/task-item.component';
 
-import { TaskService } from './task.service';
+import { TaskService } from './shared/task.service';
+import { OnlyActivePipe } from './shared/only-active.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskListComponent,
-    TaskPageComponent
+    TaskItemComponent,
+    OnlyActivePipe
   ],
   imports: [
     BrowserModule,
