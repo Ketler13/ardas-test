@@ -1,7 +1,7 @@
 export const tasks = [
   {
     id: 0,
-    name: "1",
+    name: "first",
     creation_date: "1",
     due_date: "1",
     start_date: "1",
@@ -16,7 +16,7 @@ export const tasks = [
   },
   {
     id: 0,
-    name: "1",
+    name: "second",
     creation_date: "1",
     due_date: "1",
     start_date: "1",

@@ -74,7 +74,6 @@ describe('TaskService', () => {
         body: JSON.stringify({success: false})
       });
       connection.mockRespond(new Response(responseOptions));
-      expect(connection.request.url).toBe('http://demo6366835.mockable.io/');
     });
 
     service.updateTaskName('new_name', 0).subscribe(res => {
