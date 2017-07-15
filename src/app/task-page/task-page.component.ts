@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/filter';
@@ -18,7 +18,11 @@ export class TaskPageComponent implements OnInit {
   editorIsOpen = false;
   taskName: string;
 
-  constructor(private taskService: TaskService, private route: ActivatedRoute) { }
+  constructor(
+    private taskService: TaskService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
     this.loadTask();
@@ -44,6 +48,10 @@ export class TaskPageComponent implements OnInit {
       .switchMap(params => this.taskService.getTask(+params.id))
       .subscribe(
         task => {
+          if (!task) {
+            this.router.navigate(['404']);
+            return;
+          }
           this.task = task;
           this.taskName = this.task.name;
         },

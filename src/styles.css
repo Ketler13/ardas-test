@@ -65,9 +65,19 @@ body, input, button {
   font-size: 18px;
 }
 
-.app-wrapper {
+.app-wrapper, .error-page {
   width: 70%;
   margin: 0px auto;
+}
+
+.error-page {
+	text-align: center;
+}
+
+.error-page p {
+	color: red;
+	font-size: 30px;
+	margin-top: 30px;
 }
 
 h1 {

@@ -6,15 +6,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { TaskItemComponent } from './task-list/task-item/task-item.component';
+import { TaskPageComponent } from './task-page/task-page.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 import { TaskService } from './shared/task.service';
 import { OnlyActivePipe } from './shared/only-active.pipe';
-import { TaskPageComponent } from './task-page/task-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'tasks', pathMatch: 'full' },
   { path: 'tasks', component: TaskListComponent },
-  { path: 'tasks/:id', component: TaskPageComponent }
+  { path: 'tasks/:id', component: TaskPageComponent },
+  { path: '404', component: ErrorPageComponent },
+  { path: '**', redirectTo:'404', pathMatch: 'full' }
 ]
 
 @NgModule({
@@ -23,7 +26,8 @@ const routes: Routes = [
     TaskListComponent,
     TaskItemComponent,
     OnlyActivePipe,
-    TaskPageComponent
+    TaskPageComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
