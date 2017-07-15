@@ -1,1 +1,119 @@
 /* You can add global styles to this file, and also import other style files */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+input {
+	border: none;
+}
+
+a {
+	text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+ul, li {
+	list-style-type: none;
+}
+
+body, input, button {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 18px;
+}
+
+.app-wrapper {
+  width: 70%;
+  margin: 0px auto;
+}
+
+h1 {
+  margin: 10px 0px;
+  font-size: 30px;
+  color: rgb(13,71,161);
+  text-transform: uppercase;
+}
+
+h3 {
+  text-decoration: underline;
+}
+
+.task-list {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.task-item {
+  padding: 10px;
+  transition: background-color .3s;
+  cursor: pointer;
+}
+
+.task-item:hover {
+  background-color: rgb(187,222,251);
+}
+
+.back-link {
+  display: block;
+  width: 70px;
+  height: 20px;
+  margin-top: 20px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: rgb(251,140,0);
+}
+
+.save-button {
+  width: 70px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(100,181,246);
+}
+
+.task-name {
+  border: 1px solid rgb(100,181,246);
+}

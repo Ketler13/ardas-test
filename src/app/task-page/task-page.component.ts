@@ -45,7 +45,7 @@ export class TaskPageComponent implements OnInit {
       .subscribe(
         task => {
           this.task = task;
-          this.taskName = this.task.name
+          this.taskName = this.task.name;
         },
         error => this.error = error
       );
