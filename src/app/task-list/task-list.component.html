@@ -1,6 +1,6 @@
 <div class="task-list__wrapper">
   <h1>Task list</h1>
-  <p *ngIf="loading">loading tasks...</p>
+  <p *ngIf="loading" class="loader">loading tasks...</p>
   <p *ngIf="error">{{error}}</p>
   <ul *ngIf="taskList" class="task-list">
     <li *ngFor="let task of taskList | onlyActive" class="task-item" (click)="openTask(task.id)">

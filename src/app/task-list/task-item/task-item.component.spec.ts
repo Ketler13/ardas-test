@@ -5,7 +5,7 @@ import { By } from '@angular/platform-browser';
 import { TaskItemComponent } from './task-item.component';
 import { tasks } from '../../shared/mockedTasks';
 
-describe('UserCardComponent', () => {
+describe('TaskItemComponent', () => {
   let component: TaskItemComponent;
   let fixture: ComponentFixture<TaskItemComponent>;
   let de: DebugElement;
@@ -28,5 +28,11 @@ describe('UserCardComponent', () => {
   it('name property should be same as in mock', () => {
     fixture.detectChanges();
     expect(el.textContent).toContain(tasks[0].name);
+  });
+
+  it('name property should be changed', () => {
+    component.task = tasks[1];
+    fixture.detectChanges();
+    expect(el.textContent).toContain(tasks[1].name);
   });
 });

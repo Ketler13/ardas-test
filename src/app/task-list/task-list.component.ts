@@ -21,6 +21,14 @@ export class TaskListComponent implements OnInit {
   ngOnInit(): void {
     this.loading = true;
     this.error = null;
+    this.loadTasks();
+  }
+
+  openTask(id: number) {
+    this.router.navigate(['tasks', id]);
+  }
+
+  loadTasks() {
     this.taskService.getTasks()
       .subscribe(
         tasks => {
@@ -28,12 +36,11 @@ export class TaskListComponent implements OnInit {
           this.loading = false;
           this.error = null;
         },
-        error => this.error = error
+        error => {
+          this.error = error;
+          this.loading = false;
+        }
       );
-  }
-
-  openTask(id: number) {
-    this.router.navigate(['tasks', id]);
   }
 
 }
